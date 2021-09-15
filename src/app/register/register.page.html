@@ -9,6 +9,11 @@
       </ion-item>
       <ion-item lines="full">
         <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-label position="floating" color="tertiary">Full name</ion-label>
+        <ion-input type="text" color="light" [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
         <ion-label position="floating" color="tertiary">Email Address</ion-label>
         <ion-input type="email" inputmode="email" color="light" [(ngModel)]="email"></ion-input>
       </ion-item>
@@ -18,12 +23,12 @@
         <ion-input type="password" inputmode="password" color="light" [(ngModel)]="password"></ion-input>
       </ion-item>
       <ion-item lines="none">
-        <ion-button type="submit" class="loginButton" size="large" expand="block" strong="true" (click)="login()">Login</ion-button>
+        <ion-button type="submit" class="loginButton" size="large" expand="block" strong="true" (click)="register()">Register</ion-button>
       </ion-item>
       <ion-item lines="none">
         <div class="display: flex;justify-content:center;">
-          <ion-text color="secondary">Don't have an account?</ion-text>
-          <ion-text color="primary" class="register" (click)="register()">Register</ion-text>
+          <ion-text color="secondary">Have an account?</ion-text>
+          <ion-text color="primary" class="register" (click)="login()">Login</ion-text>
         </div>
         
       </ion-item>

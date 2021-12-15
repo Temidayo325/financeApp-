@@ -1,0 +1,44 @@
+.header
+{
+   display: grid;
+   margin-top: 40px;
+   justify-content: center;
+}
+.mainHeader
+{
+   font-size: 1.5em;
+   padding-left: 15px;
+   font-weight: bold;
+   letter-spacing: 2px;
+   line-height: 40px;
+   color: white;
+}
+.grid
+{
+   // --background: #00C1C1;
+   background: #00C1C1;
+   width: 100vw;
+   height: 35vh;
+   padding: 15px;
+   display: grid;
+   justify-content: left;
+   align-items: center
+}
+ion-button
+{
+   margin-top: 20px
+}
+.textarea
+{
+   width: 80vw;
+   height: 40vh;
+   border: solid thin rgba(0, 0, 0, 0.2);
+   padding: 5px;
+   color: #000
+}
+.label
+{
+   font-size: 1em;
+   letter-spacing: 1.2px;
+   line-height: 30px;
+}

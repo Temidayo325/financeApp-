@@ -1,0 +1,76 @@
+.grid
+{
+   // --background: #00C1C1;
+   background: #00C1C1;
+   width: 100vw;
+   height: 50vh;
+   padding: 15px;
+   display: grid;
+   justify-content: center;
+}
+.profile
+{
+   color: #fff;
+   letter-spacing: 1.3px;
+   margin: 0 auto;
+   font-weight: bold;
+   font-size: 1.2em;
+}
+.names
+{
+   color: #fff;
+   letter-spacing: 1.3px;
+   text-align: center;
+   padding: 0 0 10px 0;
+   font-weight: bolder;
+   font-size: 1.2em;
+}
+.gender
+{
+   color: #fff;
+   font-size: 1em;
+   text-align: center;
+   letter-spacing: 1.3px;
+   font-weight: normal;
+}
+.image
+{
+   width: 170px;
+   height: 170px;
+   border-radius: 50%;
+   margin: 10px auto;
+}
+.item
+{
+   background: rgba(0, 193, 193, 0.1);
+   padding: 15px;
+   width: 90vw;
+   margin: 40px auto;
+}
+ion-thumbnail
+{
+   --border-radius: 50%;
+}
+ion-icon
+{
+   font-size: 24px;
+}
+.text
+{
+   letter-spacing: 1.2px;
+   font-size: 1.1em;
+   padding: 5px 0
+}
+ion-select
+{
+   border: solid thin rgba(0, 0, 0, 0.2);
+   margin: 8px 0;
+}
+.saveText
+{
+   color: rgba(0, 193, 193,1);
+   font-weight: bold;
+   letter-spacing: 1px;
+   text-align: right;
+   margin-left: 10px;
+}

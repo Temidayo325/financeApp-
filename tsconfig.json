@@ -1,7 +1,8 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
   "compileOnSave": false,
-  "compilerOptions": {
+  "compilerOptions":
+  {
     "baseUrl": "./",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
@@ -14,7 +15,8 @@
     "module": "es2020",
     "lib": ["es2018", "dom"]
   },
-  "angularCompilerOptions": {
+  "angularCompilerOptions":
+  {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,

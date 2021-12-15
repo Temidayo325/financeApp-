@@ -1,27 +1,69 @@
-#container {
-  text-align: center;
-
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
+#container
+{
+  // background: #1d2226;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px 15px
 }
-
-#container strong {
-  font-size: 20px;
-  line-height: 26px;
+ion-item
+{
+  // --background: #1d2226;
+  --border-color: #00C1C1;
 }
-
-#container p {
-  font-size: 16px;
-  line-height: 22px;
-
-  color: #8c8c8c;
-
-  margin: 0;
+ion-label
+{
+  color: #00C1C1;
 }
-
-#container a {
-  text-decoration: none;
+.loginButton
+{
+  color: #fff;
+  font-weight: bolder;
+  font-size: 14px;
+  margin: 20px auto;
+}
+ion-icon
+{
+  color: #009D97;
+}
+.header
+{
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto;
+  margin-bottom: 90px;
+}
+.header1
+{
+   margin: 20px auto;
+   margin-bottom: 40px;
+   display: flex;
+   justify-content: left;
+}
+.headerText
+{
+   font-size: 20px;
+   font-weight: bolder;
+   text-align: left;
+   letter-spacing: 1px;
+}
+.logo
+{
+  width: 30vw;
+  height: 20vh;
+  margin: 5px auto;
+  border-radius: 50%;
+}
+.text
+{
+  letter-spacing: 1px;
+  font-style: italics;
+  line-height: 12px;
+}
+.register
+{
+  text-decoration: underline;
+  line-height: 12px;
+  letter-spacing: 1px;
+  padding-left: 2px;
 }

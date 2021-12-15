@@ -1,0 +1,6 @@
+{
+	"appId": "io.ionic.starter",
+	"appName": "ExpenseX",
+	"webDir": "www",
+	"bundledWebRuntime": false
+}

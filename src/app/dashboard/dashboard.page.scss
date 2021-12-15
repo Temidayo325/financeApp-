@@ -1,0 +1,109 @@
+#canvas
+{
+   width: 100vw;
+   height: 45vh;
+   margin-bottom: 10px;
+   // box-shadow: 5px 5px 2px rgba(0,0,0,0.2), -5px 3px 4px rgba(0,0,0,0.2);
+   // border: solid thin red;
+}
+.image
+{
+   width: 170px;
+   height: 170px;
+   border-radius: 50%;
+   margin: 20px auto;
+}
+.menuList
+{
+   font-size: 1.2em;
+   text-align: center;
+   margin: 0 auto;
+   padding: 20px;
+   letter-spacing: 2px;
+   font-weight: lighter
+}
+.chartlabel
+{
+   display: flex;
+   justify-content: space-between;
+   padding: 5px 10px;
+}
+.color
+{
+   margin: 0 5px;
+   width: 30px;
+   height: 20px;
+}
+.ion-toolbar
+{
+   --background: rgb(0,193,193,0.1);
+}
+ion-header
+{
+   padding: 30px 10px;
+}
+ion-thumbnail
+{
+   --border-radius: 50%;
+}
+.expenseChartCont
+{
+   padding-bottom: 60px;
+   background: rgb(0,193,193,0.1);
+}
+.flex
+{
+   display: grid;
+   justify-items: center;
+   align-items: center;
+   text-align: center;
+   color: gray
+}
+.text-align
+{
+   color: rgba(0,0,0,0.7);
+   letter-spacing: 1px;
+   line-height: 30px;
+}
+.graphTitle
+{
+   font-weight: bold;
+   padding: 15px 0;
+   margin: 10px 0;
+   letter-spacing: 1px
+}
+.title
+{
+   font-size: 1.2em;
+   letter-spacing: 1.4px;
+   font-weight: bolder;
+}
+.avater
+{
+   margin-right: 15px;
+   height: 40px;
+   width: 40px;
+}
+.grid
+{
+   display: flex;
+   justify-content: left;
+   align-items: center;
+   padding: 10px 5px;
+}
+ion-row:first-child {
+   background-color:  rgba( 0, 193, 193, .1);
+   font-weight: bold;
+ }
+ ion-col {
+   border: 1px solid black;
+   border-bottom: 0;
+   border-right: 0;
+ }
+ ion-col:last-child {
+   border-right: 1px solid black;
+ }
+
+ ion-row:last-child {
+   border-bottom: 1px solid black;
+ }

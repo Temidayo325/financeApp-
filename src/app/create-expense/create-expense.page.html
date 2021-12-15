@@ -1,0 +1,54 @@
+<ion-app>
+   <!-- <ion-header>
+     <ion-toolbar>
+       <ion-title>createExpense</ion-title>
+     </ion-toolbar>
+   </ion-header> -->
+
+   <ion-content>
+      <ion-fab vertical="top" horizontal="start" slot="fixed">
+          <ion-fab-button color="primary" (click)="back()" size="small">
+            <ion-icon name="arrow-back-outline"></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+      <div >
+         <!-- <ion-list> -->
+            <div class="header">
+               <ion-item lines="none"  >
+                  <ion-text class="mainHeader">
+                     Create an Expense
+                  </ion-text>
+               </ion-item>
+            </div>
+
+            <div class="form">
+               <!-- <form> -->
+                  <!-- <ion-item lines="none"> -->
+                     <div class="grid">
+                        <!-- <ion-list> -->
+                           <ion-item>
+                             <ion-label position="floating">Category</ion-label>
+                             <ion-select [(ngModel)]="category">
+                               <ion-select-option *ngFor="let option of categories" [value]="option">{{option}}</ion-select-option>
+                             </ion-select>
+                           </ion-item>
+
+                           <ion-item>
+                             <ion-label position="floating">Amount</ion-label>
+                             <ion-input type="number" [(ngModel)]="amount"></ion-input>
+                           </ion-item>
+
+                        <!-- </ion-list> -->
+                     </div>
+                     <ion-button color="primary" size="default" (click)="recordExpense()">
+                        Record expense
+                        <!-- <ion-ripple-effect></ion-ripple-effect> -->
+                     </ion-button>
+                  <!-- </ion-item> -->
+               <!-- </form> -->
+            </div>
+         <!-- </ion-list> -->
+      </div>
+   </ion-content>
+
+</ion-app>

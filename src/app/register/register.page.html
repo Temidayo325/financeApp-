@@ -1,0 +1,60 @@
+
+<ion-content [fullscreen]="true">
+  <div id="container">
+      <ion-item lines="full">
+        <div class="header">
+          <!-- <ion-img src="../assets/icon/favicon.png" class="logo"></ion-img> -->
+          <ion-text color="primary"  class="text">Create an account</ion-text>
+        </div>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-icon name="person-outline" slot="start"></ion-icon>
+        <ion-label position="floating" color="tertiary">Full name</ion-label>
+        <ion-input type="text" color="default" [(ngModel)]="name"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-label position="floating" color="tertiary">Email Address</ion-label>
+        <ion-input type="email" inputmode="email" color="default" [(ngModel)]="email"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-icon name="call-outline" slot="start"></ion-icon>
+        <ion-label position="floating" color="tertiary">Phone number</ion-label>
+        <ion-input type="tel" inputmode="tel" color="default" [(ngModel)]="phone"></ion-input>
+      </ion-item>
+      <ion-item lines="full">
+        <ion-icon name="accessibility-outline" slot="start"></ion-icon>
+        <ion-label position="floating" color="tertiary">Gender</ion-label>
+        <ion-select [(ngModel)]="gender">
+            <ion-select-option value="female">Female</ion-select-option>
+            <ion-select-option value="male">Male</ion-select-option>
+       </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-label position="floating" color="tertiary">Password</ion-label>
+        <ion-input type="password" inputmode="password" color="default" [(ngModel)]="password"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-label position="floating" color="tertiary">Confirm Password</ion-label>
+        <ion-input type="password" inputmode="password" color="default" [(ngModel)]="password2"></ion-input>
+      </ion-item>
+      <ion-item lines="none">
+        <ion-button type="submit" class="loginButton" size="large" expand="block" strong="true" (click)="register()">Register</ion-button>
+      </ion-item>
+      <ion-item lines="none">
+         <!-- <div class="flex"> -->
+            <ion-checkbox checked="false" [(ngModel)]="tc" slot="start"></ion-checkbox>
+            <ion-text color="secondary">Accept <ion-text color="primary" class="register" (click)="tc()">Terms and conditions</ion-text> of the application</ion-text>
+         <!-- </div> -->
+      </ion-item>
+      <ion-item lines="none">
+        <div class="flex">
+          <ion-text color="secondary">Have an account?</ion-text>
+          <ion-text color="primary" class="register" (click)="login()">Login</ion-text>
+        </div>
+
+      </ion-item>
+  </div>
+</ion-content>

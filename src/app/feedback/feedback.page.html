@@ -1,0 +1,21 @@
+<ion-app>
+   <ion-fab vertical="top" horizontal="start" slot="fixed">
+       <ion-fab-button color="primary" (click)="back()" size="default">
+         <ion-icon name="arrow-back-outline"></ion-icon>
+       </ion-fab-button>
+     </ion-fab>
+   <ion-header>
+        <ion-header class="grid" color="primary">
+           <ion-text class="mainHeader">
+            Submit feedback
+           </ion-text>
+        </ion-header>
+   </ion-header>
+   <ion-content>
+      <div class="header">
+         <ion-label color="" stacked class="label">Feedback/Complaint</ion-label>
+        <ion-textarea type="text" placeholder="" class="textarea" [(ngModel)]="feedback"></ion-textarea>
+        <ion-button size="default" color="primary" block="true">Submit</ion-button>
+      </div>
+   </ion-content>
+</ion-app>

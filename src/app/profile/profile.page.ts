@@ -17,6 +17,9 @@ export class ProfilePage implements OnInit {
    job: string;
    income: string;
    picture: string;
+   image: any;
+   name: any;
+   userData: any;
   constructor(
      private router: Router,
      private user: PersonService,
@@ -36,7 +39,9 @@ export class ProfilePage implements OnInit {
      this.ageRange = ['0-14 years', '15-18 years', '19-23 years', '24-29 years', '30-40 years', '41-60 years', 'Above 60 years'];
      this.occupation = ['Student', 'Self employed', 'Business owner', 'Entreprenuer', 'Public servant', 'Medicals'];
      this.monthlyIncome  = ['0-10,000k', '11,000-50,000k', '51,000-150,000k', '151,000-300,000k', 'Above 300,000k'];
-
+     this.userData = this.info.retrieve()
+     this.name = "adekeye Rhoda"
+     this.generateAvatar(this.splitName())
   }
   back()
   {
@@ -160,5 +165,33 @@ savePicture()
       duration: time
     });
     toast.present();
+  }
+
+  generateAvatar(text, foregroundColor = '#00C1C1', backgroundColor = '#fff')
+  {
+      const canvas = document.createElement("canvas");
+      const context = canvas.getContext("2d");
+
+      canvas.width = 200;
+      canvas.height = 200;
+
+      // Draw background
+      context.fillStyle = backgroundColor;
+      context.fillRect(0, 0, canvas.width, canvas.height);
+
+      // Draw text
+      context.font = "bold 100px Assistant";
+      context.fillStyle = foregroundColor;
+      context.textAlign = "center";
+      context.textBaseline = "middle";
+      context.fillText(text, canvas.width / 2, canvas.height / 2);
+
+      this.image =  canvas.toDataURL("image/png");
+  }
+  splitName():string
+  {
+     let names = this.name.split(" ");
+     let initials = names.map((elem)=>{ return elem.charAt(0).toUpperCase()});
+     return initials.toString().replace(',', '');
   }
 }

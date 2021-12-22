@@ -18,7 +18,9 @@ export class DashboardPage implements OnInit {
    public expenses: boolean;
    public expenseHeader: string;
    public totalAmnt: any;
-
+   public userData: any;
+   public name: string;
+   public image: string;
   constructor(
      private expense: ExpenseService,
      private toastController: ToastController,
@@ -47,6 +49,10 @@ export class DashboardPage implements OnInit {
 
   ionViewWillEnter()
   {
+     this.userData = this.info.retrieve();
+     this.name = this.userData.name;
+     console.log(this.userData);
+     this.generateAvatar(this.splitName())
       // watch network for a connection
       let connectSubscription = this.network.onConnect().subscribe(
          () => {
@@ -240,6 +246,33 @@ export class DashboardPage implements OnInit {
        });
    }
 
+   generateAvatar(text, foregroundColor = '#fff', backgroundColor = '#00C1C1')
+   {
+       const canvas = document.createElement("canvas");
+       const context = canvas.getContext("2d");
+
+       canvas.width = 200;
+       canvas.height = 200;
+
+       // Draw background
+       context.fillStyle = backgroundColor;
+       context.fillRect(0, 0, canvas.width, canvas.height);
+
+       // Draw text
+       context.font = "bold 100px Assistant";
+       context.fillStyle = foregroundColor;
+       context.textAlign = "center";
+       context.textBaseline = "middle";
+       context.fillText(text, canvas.width / 2, canvas.height / 2);
+
+       this.image =  canvas.toDataURL("image/png");
+   }
+   splitName():string
+   {
+      let names = this.name.split(" ");
+      let initials = names.map((elem)=>{ return elem.charAt(0).toUpperCase()});
+      return initials.toString().replace(',', '');
+   }
    getAll(item)
    {
       // console.log(item)

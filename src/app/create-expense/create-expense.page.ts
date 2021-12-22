@@ -24,21 +24,29 @@ export class CreateExpensePage implements OnInit {
 
   public amount: any;
   public category: any;
-  public categories: any[]
+  public categories: any[];
+  public user : any;
   ngOnInit() {
-     this.categories = [ "Airtime",
-      "Books",
-      "Chill",
-      "Clothing/Accessories",
-      "Data",
-      "Giveaway",
-      'Inventories',
-      "Investment",
-      "Savings",
-      "Software",
-      "Transportation"]
-  }
 
+  }
+  ionViewWillEnter()
+  {
+     this.categories =
+        [
+           "Airtime",
+           "Books",
+           "Chill",
+           "Clothing/Accessories",
+           "Data",
+           "Giveaway",
+           'Inventories',
+           "Investment",
+           "Savings",
+           "Software",
+           "Transportation"
+      ];
+      this.user = this.info.retrieve()
+  }
   recordExpense()
   {
 
@@ -47,7 +55,7 @@ export class CreateExpensePage implements OnInit {
      }else{
          this.presentLoading("Logging expense......")
          // check if there is internet and then log it || if not store the data in the localStorage
-         const data = {amount: this.amount, category: this.category};
+         const data = {amount: this.amount, category: this.category, user_id: this.user.user_token};
          let connectSubscription = this.network.onConnect().subscribe(() => {
            console.log('network connected!');
            this.expense.createExpense(data).subscribe(
@@ -57,7 +65,7 @@ export class CreateExpensePage implements OnInit {
                    this.presentToast(parsed.message)
                    setTimeout(() => {
                       this.router.navigate(['/dashboard']);
-                   }, 5000)
+                   }, 3000)
                 }else{
                    this.presentToast(parsed.message)
                 }

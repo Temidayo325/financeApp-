@@ -37,9 +37,10 @@ export class FeedbackPage implements OnInit {
         const data = {user_id : userData.user_token, feedback: this.feedback};
         this.person.submitFeedback(data).subscribe(
            (response) => {
-             if (response.status == 1) {
+             let parsed = ( typeof response == 'object') ? response : JSON.parse(response);
+             if (parsed.status == 1) {
                 this.loadingController.dismiss();
-                this.presentToast(response.message);
+                this.presentToast(parsed.message);
                 this.feedback = '';
              }else{
                 this.loadingController.dismiss();
@@ -55,7 +56,7 @@ export class FeedbackPage implements OnInit {
      }else{
         // make Toast
         this.loadingController.dismiss();
-        this.presentToast("Oops! Your feedback is invalid.")
+        this.presentToast("Oops! Send a valid feedback.")
      }
   }
 

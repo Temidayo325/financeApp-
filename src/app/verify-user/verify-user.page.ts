@@ -31,7 +31,8 @@ export class VerifyUserPage implements OnInit {
         this.presentToast("The verification code is invalid");
      }else{
         // send the data to the backend
-        const data = {email: localStorage.getItem("email"), code: this.code};
+        let userData = this.info.retrieve();
+        let data = {user_id: userData.user_token, code: this.code, email: localStorage.getItem('email')};
         this.user.verifyCode(data).subscribe(
            (response) => {
              let information = ( typeof response == 'object') ? response : JSON.parse(response);

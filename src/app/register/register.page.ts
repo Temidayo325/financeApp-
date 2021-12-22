@@ -88,8 +88,8 @@ export class RegisterPage implements OnInit {
                       this.loadingController.dismiss()
                       this.presentToast("Your registration is successful.", 5000, "dark")
                       this.info.store(parsed.user)
-                      setTimeout( () => {
-                        this.router.navigate(['/verify-password']);
+                      setTimeout(() => {
+                        this.router.navigate(['/verify-user']);
                       }, 5000)
                     }else{
                       this.loadingController.dismiss()

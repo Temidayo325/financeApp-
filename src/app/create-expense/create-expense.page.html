@@ -1,0 +1,38 @@
+<ion-app>
+   <ion-fab vertical="top" horizontal="start" slot="fixed">
+     <ion-fab-button color="primary" (click)="back()">
+        <ion-icon name="arrow-back-outline"></ion-icon>
+     </ion-fab-button>
+   </ion-fab>
+   <!-- <ion-header class="header ion-no-border" color="primary">
+      <ion-img src="../../assets/expense.svg"></ion-img>
+   </ion-header> -->
+
+   <ion-content>
+      <div class="header ion-no-border" color="primary">
+         <ion-img src="../../assets/expense.svg"></ion-img>
+      </div>
+      <div class="container">
+         <ion-text class="bold"  color="tertiary">Create Expense</ion-text>
+         <p>Sorry boss, money has wings man..</p>
+         <ion-item lines="none" class="border">
+             <ion-label position="floating" >Category</ion-label>
+             <ion-select [(ngModel)]="expense.category">
+                <ion-select-option *ngFor="let category of categories" :value="{{category.category}}" >{{category.category}}</ion-select-option>
+            </ion-select>
+         </ion-item>
+         <ion-item lines="none" class="border">
+           <ion-label position="floating">Amount</ion-label>
+           <ion-input placeholder="Amount" type="text" [(ngModel)]="expense.amount"></ion-input>
+         </ion-item>
+         <ion-item lines="none" class="border">
+           <ion-label position="floating">Add Description</ion-label>
+           <ion-input placeholder="Description" type="text" [(ngModel)]="expense.description"></ion-input>
+         </ion-item>
+         <div>
+            <ion-button size="default" expand="block" color="tertiary" (click)="addExpense()">Create Expense</ion-button>
+         </div>
+
+      </div>
+   </ion-content>
+</ion-app>

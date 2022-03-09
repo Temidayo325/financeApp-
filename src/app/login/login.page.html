@@ -1,0 +1,35 @@
+<ion-app>
+   <ion-header class="header">
+      <div class="header-box">
+         <ion-text class="bold" color="tertiary"><h1>Your Expense tracker</h1></ion-text>
+         <ion-text class=""  color="tertiary"><h4>Login to track</h4></ion-text>
+      </div>
+   </ion-header>
+
+   <ion-content>
+      <div class="container">
+         <ion-text class="bold"  color="tertiary">Log in</ion-text>
+         <ion-item lines="none" class="border">
+           <!-- <ion-label position="stacked">Email</ion-label> -->
+           <ion-input placeholder="Email" type="text" [(ngModel)]="user.email"></ion-input>
+         </ion-item>
+         <ion-item lines="none" class="border">
+           <!-- <ion-label position="floating">Password</ion-label> -->
+           <ion-input placeholder="Password" type="password" [(ngModel)]="user.password"></ion-input>
+         </ion-item>
+         <!-- <ion-item lines="none" class="grid"> -->
+         <div>
+            <ion-button size="large" expand="block" color="tertiary" (click)="login()">Log in</ion-button>
+            <!-- <ion-text class="forgot" (click)="forgotPassword()">Forgot password</ion-text> -->
+         </div>
+         <div class="forgot">
+            <ion-text (click)="forgotPassword()">Forgot password</ion-text>
+         </div>
+
+         <!-- </ion-item> -->
+         <div class="forgot">
+            <ion-text class="footer text">Don't have an account? <span class="sign" (click)="register()"  color="tertiary">Sign up</span></ion-text>
+         </div>
+      </div>
+   </ion-content>
+</ion-app>

@@ -1,17 +1,28 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
-</ion-content>
+<ion-app>
+      <ion-fab slot="fixed" vertical="top" horizontal="end">
+          <ion-fab-button color="light" (click)="addExpense()"><ion-icon name="add-outline"></ion-icon></ion-fab-button>
+     </ion-fab>
+   <ion-header color="" class="header ion-no-border" style="clip-path: ellipse(117% 100% at 52.01% 0%);">
+      <div class="header-container">
+         <ion-text ><h5>Expense</h5></ion-text>
+         <ion-text class="bolder"><h1>#{{total}}</h1></ion-text>
+      </div>
+   </ion-header>
+   <ion-content fullscreen="true">
+   <ion-item color="" *ngFor="let expense of expenses" class="each-box">
+      <div class="fullDiv">
+         <div class="flex">
+            <ion-text class="">Category: {{expense.category}}</ion-text>
+         </div>
+         <div class="center">
+            <ion-text color="tertiary"><h1 class="bold">#{{expense.amount}}</h1></ion-text>
+            <ion-text class="">{{expense.created_at}}</ion-text>
+         </div>
+         <div class="flex">
+            <ion-text class="">Description: </ion-text>
+            <ion-text class="">{{expense.description}}</ion-text>
+         </div>
+      </div>
+   </ion-item>
+   </ion-content>
+</ion-app>

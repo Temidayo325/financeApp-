@@ -1,0 +1,50 @@
+.header
+{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 100vw;
+}
+ion-img
+{
+   height: 200px;
+   width: 90vw;
+   margin-top: 100px;
+}
+.container
+{
+   padding: 30px;
+   margin-top: 30px
+}
+.border
+{
+   border: solid thin #000;
+   border-radius: 20px;
+   // margin: 100px 0;
+}
+ion-item
+{
+   margin-top: 50px
+}
+.grid{
+   display: grid;
+}
+.bold
+{
+   font-weight: bolder;
+   text-align: left;
+   margin-bottom: 30px;
+   line-height: 40px;
+   font-size: 1.3em;
+    text-shadow: .5px .5px 1px #000000;
+}
+.border
+{
+   border: solid thin #000;
+   margin: 10px auto;
+}
+ion-label
+{
+   font-size: 1.8em;
+   letter-spacing: 1px;
+}

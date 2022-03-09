@@ -1,17 +1,28 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 3
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 3</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 3 page"></app-explore-container>
-</ion-content>
+<ion-app>
+   <ion-fab slot="fixed" vertical="top" horizontal="end">
+       <ion-fab-button color="light" (click)="addIncome()"><ion-icon name="add-outline"></ion-icon></ion-fab-button>
+  </ion-fab>
+   <ion-header color="" class="header ion-no-border" style="clip-path: ellipse(117% 100% at 52.01% 0%);">
+      <div class="header-container">
+         <ion-text ><h5>Income</h5></ion-text>
+         <ion-text class="bolder"><h1>#{{total}}</h1></ion-text>
+      </div>
+   </ion-header>
+   <ion-content fullscreen="true">
+   <ion-item color="primary" *ngFor="let revenue of income">
+      <div class="fullDiv">
+         <div class="flex">
+            <ion-text class="">Date: {{revenue.created_at}}</ion-text>
+         </div>
+         <div class="center">
+            <ion-text color="tertiary"><h1 class="bold">#{{revenue.amount}}</h1></ion-text>
+            <!-- <ion-text class="">{{expense.created_at}}</ion-text> -->
+         </div>
+         <div class="flex">
+            <ion-text class="">Source: </ion-text>
+            <ion-text class="">{{income.source}}</ion-text>
+         </div>
+      </div>
+   </ion-item>
+   </ion-content>
+</ion-app>

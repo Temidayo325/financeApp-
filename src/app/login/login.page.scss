@@ -1,0 +1,50 @@
+.header{
+   background-image: url('../../assets/login.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 30vh;
+   width: 100vw;
+}
+.header-box
+{
+   // display: grid;
+   margin: 12% auto;
+   color: black;
+   padding: 20px;
+}
+.text
+{
+   letter-spacing: 1px;
+   line-height: 20px;
+}
+.bold
+{
+   font-weight: bolder;
+   text-align: left;
+   margin-bottom: 30px;
+   line-height: 40px;
+   font-size: 1.1em;
+    text-shadow: .5px .5px 1px #000000;
+}
+.container
+{
+   padding: 30px;
+}
+.border
+{
+   border: solid thin #000;
+   border-radius: 20px;
+   margin: 30px 0;
+}
+.grid{
+   display: grid;
+}
+.sign
+{
+   color: #004481;
+   // padding-left: 10px;
+}
+.forgot
+{
+   margin-top: 30px;
+}

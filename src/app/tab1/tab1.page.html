@@ -1,17 +1,47 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-app>
+   <ion-content fullscreen="true">
+      <ion-header>
+         <ion-toolbar slots="start" color="primary" >
+            <ion-text class="bold">
+            Hello {{name}}
+           </ion-text>
+           <ion-icon name="person-circle-outline" slot="end" class="header-icon"></ion-icon>
+         </ion-toolbar>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
+      </ion-header>
+      <ion-item color="primary" slot="" lines="none" (click)="viewExpense()">
+         <div class="fullDiv">
+            <h5>Expense</h5>
+            <ion-text>
+               <h3 class="bolder">#{{expenses}}</h3>
+               <!-- <h4 class="small">An overview of your Expenses</h4> -->
+            </ion-text>
+            <ion-button size="default" color="tertiary" class="card-button" (click)="addExpense()"><ion-icon name="add-circle-sharp" slot="start"></ion-icon>Add Expense</ion-button>
+         </div>
+      </ion-item>
 
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content>
+      <ion-item color="primary" slot="" lines="none" (click)="viewIncome()">
+         <div class="fullDiv">
+            <h5>Income</h5>
+            <ion-text>
+               <h3 class="bolder">#{{income}}</h3>
+               <!-- <h4 class="small">An overview of your Expenses</h4> -->
+            </ion-text>
+            <ion-button size="default" color="tertiary" class="card-button" (click)="addIncome()"><ion-icon name="add-circle-sharp" slot="start"></ion-icon>Add Income</ion-button>
+         </div>
+      </ion-item>
+
+      <ion-item color="" slot="" lines="none">
+         <div class="fullDiv">
+            <h5>Categories</h5>
+            <div>
+               <ion-text *ngFor="let category of categories">
+                  <p class="category">{{category.category}}</p>
+               </ion-text>
+            </div>
+            <ion-button size="small" color="danger" class="card-button">Request category</ion-button>
+         </div>
+      </ion-item>
+     <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
+   </ion-content>
+</ion-app>

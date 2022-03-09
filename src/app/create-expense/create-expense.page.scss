@@ -1,0 +1,45 @@
+.header
+{
+   width: 100vw;
+   display: flex;
+   justify-content: center;
+   align-items:center;
+}
+ion-img
+{
+   height: 300px;
+   width: 60vw;
+   margin-top: 20px;
+}
+.container
+{
+   padding: 30px;
+}
+.border
+{
+   border: solid thin #000;
+   border-radius: 20px;
+   margin: 70px 0;
+}
+.grid{
+   display: grid;
+}
+.bold
+{
+   font-weight: bolder;
+   text-align: left;
+   margin-bottom: 30px;
+   line-height: 40px;
+   font-size: 1.3em;
+    text-shadow: .5px .5px 1px #000000;
+}
+.border
+{
+   border: solid thin #000;
+   margin: 10px auto;
+}
+ion-label
+{
+   font-size: 1.8em;
+   letter-spacing: 1px;
+}

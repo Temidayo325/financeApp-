@@ -1,0 +1,51 @@
+.header{
+   background-image: url('../../assets/register.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   height: 30vh;
+   width: 100vw;
+}
+.header-box
+{
+   // display: grid;
+   margin: 10% auto;
+   color: black;
+   padding: 20px;
+}
+.text
+{
+   letter-spacing: 1px;
+   line-height: 20px;
+}
+.bold
+{
+   font-weight: bolder;
+   text-align: left;
+   margin-bottom: 30px;
+   line-height: 40px;
+   font-size: 1.2em;
+   text-shadow: 0.5px .5px 1px #000000;
+}
+.container
+{
+   padding: 30px;
+   // margin-top: 10px;
+}
+.border
+{
+   border: solid thin #000;
+   border-radius: 20px;
+   margin: 20px 0;
+}
+.grid{
+   display: grid;
+}
+.footer
+{
+   margin-top: 20px;
+}
+.sign
+{
+   color: #004481;
+   // padding-left: 10px;
+}

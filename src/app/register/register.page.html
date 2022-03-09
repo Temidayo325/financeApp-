@@ -1,0 +1,52 @@
+<ion-app>
+   <ion-header class="header">
+      <div class="header-box">
+         <ion-text class="bold"  color="tertiary"><h1>Track your Expenses</h1></ion-text>
+         <ion-text class=""  color="tertiary"><h4>Join the movement</h4></ion-text>
+      </div>
+   </ion-header>
+
+   <ion-content>
+      <div class="container">
+         <ion-text class="bold"  color="tertiary">Sign up</ion-text>
+         <ion-item lines="none" class="border">
+           <ion-input placeholder="Full name" type="text" [(ngModel)]="user.name" required></ion-input>
+         </ion-item>
+         <ion-item lines="none" class="border">
+           <ion-input placeholder="Email" type="text" [(ngModel)]="user.email" required></ion-input>
+         </ion-item>
+         <ion-item lines="none" class="border">
+           <ion-input placeholder="09034567890" type="text" [(ngModel)]="user.phoneNumber" required></ion-input>
+         </ion-item>
+         <ion-item lines="none" class="border" required>
+            <ion-label position="floating" >Gender</ion-label>
+            <ion-select [(ngModel)]="user.gender">
+                <ion-select-option value="female">Female</ion-select-option>
+                <ion-select-option value="male">Male</ion-select-option>
+           </ion-select>
+         </ion-item>
+         <ion-item lines="none" class="border" required>
+           <ion-input placeholder="Password" type="password" [(ngModel)]="user.password"></ion-input>
+         </ion-item>
+         <ion-item lines="none" class="border" required>
+           <ion-input placeholder="Confirm Password" type="password" [(ngModel)]="user.password2"></ion-input>
+         </ion-item>
+         <!-- <ion-item lines="none" class="grid"> -->
+         <div>
+            <ion-button size="large" expand="block" color="tertiary" (click)="register()">Sign up</ion-button>
+            <!-- <ion-text class="forgot" (click)="forgotPassword()">already have an </ion-text> -->
+         </div>
+
+
+         <!-- </ion-item> -->
+         <div class="footer">
+            <ion-text class="footer text">Already have an account? <span class="sign" (click)="login()">Log in</span></ion-text>
+         </div>
+      </div>
+   </ion-content>
+   <!-- <ion-footer>
+      <!-- <ion-toolbar>
+         <ion-text class="footer text">Already have an account? <span class="sign" (click)="login()">Log in</span></ion-text>
+      <!-- </ion-toolbar>
+   </ion-footer> -->
+</ion-app>

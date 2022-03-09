@@ -1,0 +1,68 @@
+.header
+{
+   display: grid;
+   justify-content: center;
+   align-items: center;
+   background: #004481;
+   width: 100vw;
+   height: 15vh;
+}
+.header-container
+{
+   text-align: center
+}
+.bolder
+{
+   font-size: 4em;
+   color: white;
+   font-weight: bolder;
+   text-shadow: 0.5px .5px 1px #000;
+   line-height: 70px;
+   margin-top: 0px;
+   letter-spacing: 1px;
+}
+h5
+{
+   font-size: 1em;
+   color: white;
+}
+.bold
+{
+   font-size: 1.7em;
+   font-weight: bolder;
+   text-shadow: 0.5px .5px 1px #000;
+   margin-top: 0px;
+   letter-spacing: 1px;
+   color: white;
+}
+ion-item
+{
+   margin: 30px auto;
+   width: 90vw;
+   padding: 15px 0;
+   --border-radius: 10px
+}
+ion-text
+{
+   letter-spacing: 1px;
+}
+.flex
+{
+   padding: 10px 0;
+}
+.fullDiv
+{
+   width: 100%;
+   height:100%;
+   padding: 10px;
+}
+.center
+{
+   display: grid;
+   justify-content: center;
+   text-align: center;
+}
+.each-box
+{
+   background: #004481;
+}

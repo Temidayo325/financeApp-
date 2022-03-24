@@ -19,9 +19,13 @@ export class LoginPage implements OnInit {
      private person: PersonService,
      private info: InformationService
  ) { }
-  public user = {email: '', password: ''}
+  public registeredEmail: string = localStorage.getItem("email")
+  public user = {email: ( this.registeredEmail !== '') ? this.registeredEmail : '', password: ''}
   public loading : any
   public ModalOpen: true
+  public hidePassword: boolean = true
+  public passwordType: string = 'password'
+
   ngOnInit() {
 
   }
@@ -79,6 +83,11 @@ export class LoginPage implements OnInit {
   register()
   {
      this.router.navigate(['/register'])
+  }
+  viewPassword()
+  {
+       this.hidePassword = !this.hidePassword
+       this.passwordType = (this.hidePassword) ? 'password' : 'text'
   }
   async presentLoading(message)
   {

@@ -26,10 +26,14 @@
            </ion-select>
          </ion-item>
          <ion-item lines="none" class="border" required>
-           <ion-input placeholder="Password" type="password" [(ngModel)]="user.password"></ion-input>
+           <ion-input placeholder="Password" [type]="passwordType" [(ngModel)]="user.password"></ion-input>
+           <ion-icon name="eye" (click)="viewPassword()" *ngIf="hidePassword"></ion-icon>
+           <ion-icon name="eye-off" (click)="viewPassword()" *ngIf="!hidePassword"></ion-icon>
          </ion-item>
          <ion-item lines="none" class="border" required>
-           <ion-input placeholder="Confirm Password" type="password" [(ngModel)]="user.password2"></ion-input>
+           <ion-input placeholder="Confirm Password" [type]="passwordConfirmType" [(ngModel)]="user.password2"></ion-input>
+           <ion-icon name="eye" (click)="viewConfirmPassword()" *ngIf="hideConfirmPassword"></ion-icon>
+           <ion-icon name="eye-off" (click)="viewConfirmPassword()" *ngIf="!hideConfirmPassword"></ion-icon>
          </ion-item>
          <!-- <ion-item lines="none" class="grid"> -->
          <div>

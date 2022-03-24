@@ -20,6 +20,10 @@ export class RegisterPage implements OnInit {
      private info: InformationService
  ) { }
   public user = {name: '', email: '', phoneNumber: '', gender: '', password: '', password2: ''}
+  public hidePassword: boolean = true
+  public passwordType: string = 'password'
+  public hideConfirmPassword: boolean = true
+  public passwordConfirmType: string = 'password'
   ngOnInit() {
   }
 
@@ -75,6 +79,7 @@ export class RegisterPage implements OnInit {
                       this.loadingctrl.dismiss()
                       this.presentToast("Your registration is successful.", 5000, "dark")
                       this.info.store(parsed.data)
+                      localStorage.setItem("email", parsed.data.email)
                       localStorage.setItem("user_id", parsed.data.user_id)
                       setTimeout(() => {
                         this.router.navigate(['/verify-password']);
@@ -95,5 +100,15 @@ export class RegisterPage implements OnInit {
          }
 
       }
+   }
+   viewPassword()
+   {
+        this.hidePassword = !this.hidePassword
+        this.passwordType = (this.hidePassword) ? 'password' : 'text'
+   }
+   viewConfirmPassword()
+   {
+       this.hideConfirmPassword = !this.hideConfirmPassword
+       this.passwordConfirmType = (this.hideConfirmPassword) ? 'password' : 'text'
    }
 }

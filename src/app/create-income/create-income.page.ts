@@ -19,6 +19,11 @@ export class CreateIncomePage {
  public user = JSON.parse(localStorage.getItem("user"))
  public income = {amount: '', user_id: this.user.user_id, source: ''}
  public sources: any
+
+      ionViewWillEnter()
+      {
+           this.getAvailableIncomeSources()
+      }
   async addIncome()
   {
      await this.presentLoading("Adding expense....");
@@ -78,18 +83,20 @@ export class CreateIncomePage {
         for(let [key, value] of Object.entries(data))
         {
            if (value == undefined || value == null || value.length < 2) {
-              return key + " is Invalid" + value
+              return key + " is Invalid"
            }
         }
      }
      getAvailableIncomeSources()
      {
         this.revenue.getSources(localStorage.getItem("token")).subscribe(
+
           response => {
             this.sources = response.data
+            console.log(this.sources)
          },
          error => {
-            console.log(error)
+              console.log(error)
          }
       )
      }

@@ -33,6 +33,10 @@ const routes: Routes = [
   {
     path: 'create-income',
     loadChildren: () => import('./create-income/create-income.module').then( m => m.CreateIncomePageModule)
+  },
+  {
+    path: 'change-password',
+    loadChildren: () => import('./change-password/change-password.module').then( m => m.ChangePasswordPageModule)
   }
 ];
 @NgModule({

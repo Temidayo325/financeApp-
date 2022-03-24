@@ -87,7 +87,7 @@ export class CreateExpensePage {
        for(let [key, value] of Object.entries(data))
        {
           if (value == undefined || value == null || value.length < 2) {
-             return key + " is Invalid" + value
+             return key + " is Invalid"
           }
        }
     }

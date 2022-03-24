@@ -50,4 +50,11 @@ Signup(user: object): Observable<any>
       .catch(error => { return error })
        return from(value)
    }
+ ResetPassword(email: string): Observable<any>
+ {
+      let value = this.http.post(this.baseUrl+"reset", email, this.headers)
+      .then(data => { return data.data })
+      .catch(error => { return error })
+       return from(value)
+ }
 }

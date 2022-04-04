@@ -3,6 +3,7 @@ import { ToastController, NavController, LoadingController  } from '@ionic/angul
 import { Router } from '@angular/router';
 import { PersonService } from '../Service/person.service';
 import { InformationService } from '../Service/information.service';
+import { Network } from  '@awesome-cordova-plugins/network/ngx';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,8 @@ export class LoginPage implements OnInit {
      private navctrl: NavController,
      private router: Router,
      private person: PersonService,
-     private info: InformationService
+     private info: InformationService,
+     private network: Network
  ) { }
   public registeredEmail: string = localStorage.getItem("email")
   public user = {email: ( this.registeredEmail !== '') ? this.registeredEmail : '', password: ''}
@@ -31,11 +33,38 @@ export class LoginPage implements OnInit {
   }
   ionViewWillEnter()
   {
+       // watch network for a disconnection
+     let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
+       this.presentToast("No internet connection")
+     });
+     // stop disconnect watch
+     disconnectSubscription.unsubscribe();
 
+  }
+  async checkNetwork()
+  {
+       setTimeout(() => {
+             if (this.network.type !== 'none' && this.network.type !== '2g' && this.network.type !== 'unknown') {
+               this.login()
+          }else{
+               this.presentToast("No internet connection")
+          }
+       }, 2000);
   }
   async login()
   {
-     await this.presentLoading("Attempting to login...");
+     await this.presentLoading("Logging in...");
+     let connectSubscription = this.network.onConnect().subscribe(() => {
+       console.log('network connected!');
+       // We just got a connection but we need to wait briefly
+        // before we determine the connection type. Might need to wait.
+       // prior to doing any api requests as well.
+       setTimeout(() => {
+         if (this.network.type !== 'wifi') {
+           console.log('we got a wifi connection, woohoo!');
+         }
+       }, 3000);
+     });
      let checked = this.validateData(this.user)
      if (checked) {
         // console.log(this.loading)

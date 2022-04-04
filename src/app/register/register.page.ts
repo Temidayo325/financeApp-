@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ToastController, NavController, LoadingController  } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { PersonService } from '../Service/person.service';
 import { InformationService } from '../Service/information.service';
-
+import { Network } from  '@awesome-cordova-plugins/network/ngx';
 @Component({
   selector: 'app-register',
   templateUrl: './register.page.html',
   styleUrls: ['./register.page.scss'],
 })
-export class RegisterPage implements OnInit {
+export class RegisterPage {
 
   constructor(
      private toastCtrl: ToastController,
@@ -17,16 +17,35 @@ export class RegisterPage implements OnInit {
      private navctrl: NavController,
      private router: Router,
      private person: PersonService,
-     private info: InformationService
+     private info: InformationService,
+     private network: Network
  ) { }
   public user = {name: '', email: '', phoneNumber: '', gender: '', password: '', password2: ''}
   public hidePassword: boolean = true
   public passwordType: string = 'password'
   public hideConfirmPassword: boolean = true
   public passwordConfirmType: string = 'password'
-  ngOnInit() {
-  }
 
+ionViewWillEnter()
+{
+   // watch network for a disconnection
+     let disconnectSubscription = this.network.onDisconnect().subscribe(() => {
+       this.presentToast("No internet connection")
+     });
+     // stop disconnect watch
+     disconnectSubscription.unsubscribe();
+
+}
+  async checkNetwork()
+  {
+       setTimeout(() => {
+             if (this.network.type !== 'none' && this.network.type !== '2g' && this.network.type !== 'unknown') {
+               this.register()
+          }else{
+               this.presentToast("No internet connection")
+          }
+       }, 2000);
+  }
   async presentLoading(message)
   {
        const loading = await this.loadingctrl.create({

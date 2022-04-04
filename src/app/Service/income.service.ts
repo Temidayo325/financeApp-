@@ -10,7 +10,7 @@ export class IncomeService {
   constructor(
       private http: HTTP
  ) { }
- public baseUrl = "https://expensex.lumina.com.ng/api/";
+public baseUrl = "https://expensex.pentadcrown.com.ng/api/";
 
   addIncome(details: object, token: string): Observable<any>
   {

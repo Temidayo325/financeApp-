@@ -13,11 +13,11 @@
       </div>
       <div class="container">
          <ion-text class="bold"  color="tertiary">Create Income</ion-text>
-         <ion-text color=""><p>Agbafiriyoyo, Money boss...</p></ion-text>
+         <ion-text color=""><p>Credit alert...God win...</p></ion-text>
          <ion-item lines="none" class="border">
              <ion-label position="floating" >Sources</ion-label>
              <ion-select [(ngModel)]="income.source">
-                <ion-select-option *ngFor="let source of sources" :value="{{source.source}}" >{{source.source}}</ion-select-option>
+                <ion-select-option *ngFor="let eachSource of sources" :value="{{eachSource.source}}" >{{eachSource.source}}</ion-select-option>
             </ion-select>
          </ion-item>
          <ion-item lines="none" class="border">
@@ -25,7 +25,7 @@
            <ion-input placeholder="Amount" type="text" [(ngModel)]="income.amount"></ion-input>
          </ion-item>
          <div>
-            <ion-button size="default" expand="block" color="tertiary" (click)="addIncome()">Create Income</ion-button>
+            <ion-button size="" expand="block" color="tertiary" (click)="addIncome()">Create Income</ion-button>
          </div>
 
       </div>

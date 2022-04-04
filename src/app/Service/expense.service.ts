@@ -10,7 +10,7 @@ export class ExpenseService {
   constructor(
      private http: HTTP
  ) { }
-  public baseUrl = "https://expensex.lumina.com.ng/api/";
+public baseUrl = "https://expensex.pentadcrown.com.ng/api/";
 
   getExpenseOverview(user_id: string, token: string): Observable<any>
    {

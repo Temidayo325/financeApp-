@@ -12,7 +12,7 @@ export class PersonService {
      private http: HTTP
  ) { }
 
- public baseUrl = "https://expensex.lumina.com.ng/api/";
+public baseUrl = "https://expensex.pentadcrown.com.ng/api/";
  public headers = {'Content-Type': 'application/json' , 'Accept': 'application/json'};
 public httpHeader = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json', 'Accept': 'application/json'}),
@@ -50,9 +50,16 @@ Signup(user: object): Observable<any>
       .catch(error => { return error })
        return from(value)
    }
- ResetPassword(email: string): Observable<any>
+ resetPassword(email: object): Observable<any>
  {
       let value = this.http.post(this.baseUrl+"reset", email, this.headers)
+      .then(data => { return data.data })
+      .catch(error => { return error })
+       return from(value)
+ }
+ changePassword(details: object): Observable<any>
+ {
+      let value = this.http.post(this.baseUrl+"changePassword", details, this.headers)
       .then(data => { return data.data })
       .catch(error => { return error })
        return from(value)

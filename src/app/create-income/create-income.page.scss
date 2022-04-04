@@ -7,20 +7,20 @@
 }
 ion-img
 {
-   height: 300px;
-   width: 60vw;
+   height: 230px;
+   width: 70vw;
    margin-top: 20px;
 }
 .container
 {
    padding: 30px;
-   margin-top: 30px
+   // margin-top: 30px
 }
 .border
 {
    border: solid thin #000;
    border-radius: 20px;
-   // margin: 100px 0;
+   margin: 20px 0;
 }
 ion-item
 {
@@ -36,7 +36,7 @@ ion-item
    margin-bottom: 30px;
    line-height: 40px;
    font-size: 1.3em;
-    text-shadow: .5px .5px 1px #000000;
+    // text-shadow: .5px .5px 1px #000000;
 }
 .border
 {
@@ -47,4 +47,10 @@ ion-label
 {
    font-size: 1.8em;
    letter-spacing: 1px;
+}
+ion-button
+{
+     --padding-bottom: 25px;
+     --padding-top: 25px;
+     font-size: 1em;
 }

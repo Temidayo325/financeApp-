@@ -18,11 +18,11 @@ export class CreateIncomePage {
  ) { }
  public user = JSON.parse(localStorage.getItem("user"))
  public income = {amount: '', user_id: this.user.user_id, source: ''}
- public sources: any
+ public sources: any = [{"source": "Work"},{"source": "Giveaway"},{"source": "Side hustle"},{"source": "Salary"}, {"source": "Loan"},{"source": "Others"}]
 
       ionViewWillEnter()
       {
-           this.getAvailableIncomeSources()
+           // this.getAvailableIncomeSources()
       }
   async addIncome()
   {
@@ -87,17 +87,19 @@ export class CreateIncomePage {
            }
         }
      }
-     getAvailableIncomeSources()
-     {
-        this.revenue.getSources(localStorage.getItem("token")).subscribe(
-
-          response => {
-            this.sources = response.data
-            console.log(this.sources)
-         },
-         error => {
-              console.log(error)
-         }
-      )
-     }
+     // getAvailableIncomeSources()
+     // {
+     //    this.revenue.getSources(localStorage.getItem("token")).subscribe(
+     //
+     //      response => {
+     //           console.log(response)
+     //           let information = ( typeof response == 'object') ? response : JSON.parse(response);
+     //         this.sources = [information.data]
+     //        console.log(this.sources)
+     //     },
+     //     error => {
+     //          console.log(error)
+     //     }
+     //  )
+     // }
 }

@@ -22,7 +22,7 @@ export class Tab3Page {
    public total = "00.00"
    async ionViewWillEnter()
    {
-      await this.presentLoading("Retrieving your expense....")
+      await this.presentLoading("Retrieving your income....")
       const userData = JSON.parse(localStorage.getItem("user"))
       this.revenue.getRevenue(userData.user_id, localStorage.getItem("token")).subscribe(
         response => {
@@ -76,5 +76,9 @@ export class Tab3Page {
     addIncome()
     {
       this.router.navigate(['/create-income'])
+    }
+    menu()
+    {
+         this.presentToast("in a bit")
     }
 }

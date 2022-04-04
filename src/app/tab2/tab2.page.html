@@ -1,28 +1,55 @@
 <ion-app>
-      <ion-fab slot="fixed" vertical="top" horizontal="end">
-          <ion-fab-button color="light" (click)="addExpense()"><ion-icon name="add-outline"></ion-icon></ion-fab-button>
-     </ion-fab>
-   <ion-header color="" class="header ion-no-border" style="clip-path: ellipse(117% 100% at 52.01% 0%);">
-      <div class="header-container">
-         <ion-text ><h5>Expense</h5></ion-text>
-         <ion-text class="bolder"><h1>#{{total}}</h1></ion-text>
-      </div>
-   </ion-header>
-   <ion-content fullscreen="true">
-   <ion-item color="primary" *ngFor="let expense of expenses">
-      <div class="fullDiv">
-         <div class="flex">
+  <ion-fab slot="fixed" vertical="top" horizontal="end">
+    <ion-fab-button color="light" (click)="addExpense()"
+      ><ion-icon name="add-outline"></ion-icon
+    ></ion-fab-button>
+  </ion-fab>
+  <ion-header
+    color=""
+    class="header ion-no-border"
+    style="clip-path: ellipse(117% 100% at 52.01% 0%)"
+  >
+    <div class="header-container">
+      <ion-text><h5>Expense</h5></ion-text>
+      <ion-text class="bolder"><h1>#{{total}}</h1></ion-text>
+    </div>
+  </ion-header>
+  <ion-content fullscreen="true">
+    <div *ngIf="total !== 0">
+      <ion-item color="primary" *ngFor="let expense of expenses">
+        <div class="fullDiv">
+          <div class="flex">
             <ion-text class="">Category: {{expense.category}}</ion-text>
-         </div>
-         <div class="center">
-            <ion-text color="tertiary"><h1 class="bold">#{{expense.amount}}</h1></ion-text>
+          </div>
+          <div class="center">
+            <ion-text color="tertiary"
+              ><h1 class="bold">#{{expense.amount}}</h1></ion-text
+            >
             <ion-text class="">{{expense.created_at}}</ion-text>
-         </div>
-         <div class="flex">
+          </div>
+          <div class="flex">
             <ion-text class="">Description: </ion-text>
             <ion-text class="">{{expense.description}}</ion-text>
-         </div>
+          </div>
+        </div>
+      </ion-item>
+    </div>
+    <div *ngIf="total == 0" class="no-expenses-wrapper">
+      <div class="no-expenses">
+        <ion-text>
+          <p>
+            You have not recorded any expenses yet. Click the button below to
+            record an expense
+          </p>
+        </ion-text>
+        <ion-button
+          size="default"
+          expand="block"
+          color="tertiary"
+          (click)="addExpense()"
+          >Add Expense</ion-button
+        >
       </div>
-   </ion-item>
-   </ion-content>
+    </div>
+  </ion-content>
 </ion-app>

@@ -1,14 +1,17 @@
 <ion-app>
-   <ion-header class="header">
+   <!-- <ion-header class="header">
       <div class="header-box">
          <ion-text class="bold" color="tertiary"><h1>Your Expense tracker</h1></ion-text>
          <ion-text class=""  color="tertiary"><h4>Login to track</h4></ion-text>
       </div>
-   </ion-header>
+   </ion-header> -->
 
    <ion-content>
       <div class="container">
-         <ion-text class="bold"  color="tertiary">Log in</ion-text>
+           <div class="logo-container">
+                <ion-img src="../../assets/icon.png" class="logo" alt="ExpenseX logo"></ion-img>
+           </div>
+         <!-- <ion-text class="bold"  color="tertiary">Log in</ion-text> -->
          <ion-item lines="none" class="border">
            <!-- <ion-label position="stacked">Email</ion-label> -->
            <ion-input placeholder="Email" type="text" [(ngModel)]="user.email"></ion-input>

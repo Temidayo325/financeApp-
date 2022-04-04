@@ -11,7 +11,7 @@ export class InformationService {
      private http: HTTP
  ) { }
    public data: any;
-   public baseUrl = "https://expensex.lumina.com.ng/api/";
+public baseUrl = "https://expensex.pentadcrown.com.ng/api/";
    store(info)
    {
        this.data = info;

@@ -7,7 +7,7 @@
 }
 ion-img
 {
-   height: 300px;
+   height: 230px;
    width: 60vw;
    margin-top: 20px;
 }
@@ -31,7 +31,6 @@ ion-img
    margin-bottom: 30px;
    line-height: 40px;
    font-size: 1.3em;
-    text-shadow: .5px .5px 1px #000000;
 }
 .border
 {
@@ -42,4 +41,10 @@ ion-label
 {
    font-size: 1.8em;
    letter-spacing: 1px;
+}
+ion-button
+{
+     --padding-bottom: 25px;
+     --padding-top: 25px;
+     font-size: 1em;
 }

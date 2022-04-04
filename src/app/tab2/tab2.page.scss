@@ -66,3 +66,19 @@ ion-text
 {
    background: #004481;
 }
+.no-expenses-wrapper
+{
+     display: flex;
+     justify-content: center;
+}
+.no-expenses
+{
+     line-height: 25px;
+     letter-spacing: 1px;
+     width: 80vw;
+     margin-top: 23vh;
+}
+ion-button
+{
+     margin-top: 15px;
+}

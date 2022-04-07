@@ -33,4 +33,18 @@ public baseUrl = "https://expensex.pentadcrown.com.ng/api/";
      .catch(error => {return error});
      return from(value)
   }
+  getPastMonthRevenue(user_id: string, token: string):Observable<any>
+  {
+     let value = this.http.get(this.baseUrl+'getPastMonthIncome', {user_id: user_id}, {'Content-Type': 'application/json' , 'Accept': 'application/json', 'Authorization': 'Bearer '+token})
+     .then( data => {return data.data})
+     .catch(error => {return error});
+     return from(value)
+  }
+  getTwoDatesRevenue(details: object, token: string):Observable<any>
+  {
+     let value = this.http.get(this.baseUrl+'getSortbetweenTwoDatesIncome', details, {'Content-Type': 'application/json' , 'Accept': 'application/json', 'Authorization': 'Bearer '+token})
+     .then( data => {return data.data})
+     .catch(error => {return error});
+     return from(value)
+  }
 }

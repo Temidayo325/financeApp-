@@ -11,7 +11,11 @@
       </ion-header>
       <ion-item color="primary" slot="" lines="none" >
          <div class="fullDiv">
-            <h5>Expense</h5>
+            <div class="head-word">
+                 <h5>Expense</h5>
+                 <!-- <ion-icon name="menu" class="menu-icon" (click)="showFilter()"></ion-icon> -->
+                 <ion-icon name="ellipsis-vertical" class="menu-icon" (click)="chooseFilter()" id="trigger-button"></ion-icon>
+            </div>
             <ion-text>
                <h3 class="bolder">#{{expenses}}</h3>
                <!-- <h4 class="small">An overview of your Expenses</h4> -->
@@ -22,7 +26,11 @@
 
       <ion-item color="primary" slot="" lines="none" >
          <div class="fullDiv">
-            <h5>Income</h5>
+              <div class="head-word">
+                  <h5>Income</h5>
+                  <!-- <ion-icon name="menu" class="menu-icon" (click)="showFilter()"></ion-icon> -->
+                  <ion-icon name="ellipsis-vertical" class="menu-icon" (click)="chooseFilter()" id="trigger-button"></ion-icon>
+             </div>
             <ion-text>
                <h3 class="bolder">#{{income}}</h3>
                <!-- <h4 class="small">An overview of your Expenses</h4> -->
@@ -41,6 +49,37 @@
             </div>
             <!-- <ion-button size="small" color="danger" class="card-button">Request category</ion-button> -->
          </div>
+      </ion-item>
+
+      <ion-item>
+           <ion-modal [swipeToClose]="true" [isOpen]="isOpen">
+            <ng-template>
+                 <!-- <ion-button (click)="closeModal()">Close</ion-button> -->
+                 <ion-text (click)="closeModal()" color="danger" style="text-align:right;padding:10px ">Close</ion-text>
+                  <ion-content class="wrapper">
+                       <div class="wrapper-cont">
+                            <div class="flex">
+                                 <ion-label position="float">Start date</ion-label>
+                                 <ion-text class="dateText">{{ dateValue1 }}</ion-text>
+                            </div>
+                            <div class="flex">
+                                 <ion-label position="float">End date</ion-label>
+                                <ion-text class="dateText">{{ dateValue2 }}</ion-text>
+                            </div>
+                            <ion-item lines="none" class="">
+                             <ion-datetime
+                                  presentation="date" #dateTime size="cover" [disabled]="disabled"
+                                  (ionChange)="setDate(dateTime.value)"
+                              ></ion-datetime>
+                           </ion-item>
+                      </div>
+                      <div style="display:grid;justify-content:center">
+                           <ion-button size="default" (click)="getSpecificDatesExpense()">Get Expense</ion-button>
+                           <ion-text style="text-align:center;margin-top:6px" (click)="resetDate()">Reset date</ion-text>
+                      </div>
+                  </ion-content>
+            </ng-template>
+          </ion-modal>
       </ion-item>
      <!-- <app-explore-container name="Tab 1 page"></app-explore-container> -->
    </ion-content>

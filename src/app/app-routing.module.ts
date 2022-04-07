@@ -38,6 +38,19 @@ const routes: Routes = [
     path: 'change-password',
     loadChildren: () => import('./change-password/change-password.module').then( m => m.ChangePasswordPageModule)
   }
+  // {
+  //   path: 'current-expense',
+  //   loadChildren: () => import('./current-expense/current-expense.module').then( m => m.CurrentExpensePageModule)
+  // },
+  // {
+  //   path: 'past-expense',
+  //   loadChildren: () => import('./past-expense/past-expense.module').then( m => m.PastExpensePageModule)
+  // },
+  // {
+  //   path: 'specific-expense',
+  //   loadChildren: () => import('./specific-expense/specific-expense.module').then( m => m.SpecificExpensePageModule)
+  // }
+
 ];
 @NgModule({
   imports: [

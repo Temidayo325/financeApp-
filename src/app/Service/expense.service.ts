@@ -19,6 +19,13 @@ public baseUrl = "https://expensex.pentadcrown.com.ng/api/";
      .catch(error => {return error});
       return from(value)
    }
+   getPastExpenseOverview(user_id: string, token: string): Observable<any>
+   {
+        let value = this.http.get(this.baseUrl+'getPastOverview', {user_id: user_id} , {'Content-Type': 'application/json' , 'Accept': 'application/json', 'Authorization': 'Bearer '+token})
+       .then( data => {return data.data})
+       .catch(error => {return error});
+        return from(value)
+   }
    addExpense(details: object, token: string): Observable<any>
     {
       let value = this.http.post(this.baseUrl+'ExpenseWithCash', details , {'Content-Type': 'application/json' , 'Accept': 'application/json', 'Authorization': 'Bearer '+token})
@@ -32,5 +39,26 @@ public baseUrl = "https://expensex.pentadcrown.com.ng/api/";
      .then( data => {return data.data})
      .catch(error => {return error});
       return from(value)
+    }
+    getPastMonthExpense(user_id: string, token: string): Observable<any>
+    {
+         let value = this.http.get(this.baseUrl+'getPastOverview', {user_id: user_id} , {'Content-Type': 'application/json' , 'Accept': 'application/json', 'Authorization': 'Bearer '+token})
+        .then( data => {return data.data})
+        .catch(error => {return error});
+         return from(value)
+    }
+    getTwoDatesExpenseOverview(details: object, token: string): Observable<any>
+    {
+         let value = this.http.get(this.baseUrl+'getSortbetweenTwoDatesOverview', details , {'Content-Type': 'application/json' , 'Accept': 'application/json', 'Authorization': 'Bearer '+token})
+        .then( data => {return data.data})
+        .catch(error => {return error});
+         return from(value)
+    }
+    getTwoDatesExpense(details: object, token: string): Observable<any>
+    {
+         let value = this.http.get(this.baseUrl+'getSortbetweenTwoDatesExpense', details , {'Content-Type': 'application/json' , 'Accept': 'application/json', 'Authorization': 'Bearer '+token})
+        .then( data => {return data.data})
+        .catch(error => {return error});
+         return from(value)
     }
 }

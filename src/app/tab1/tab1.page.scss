@@ -48,6 +48,19 @@ h3, h4, h5
    display: grid;
    justify-items: center;
 }
+.head-word
+{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     justify-items: center;
+     width: 100%;
+}
+.menu-icon
+{
+     height: 20px;
+     width: 20px;
+}
 .card-button
 {
    letter-spacing: 1px;
@@ -64,4 +77,30 @@ h3, h4, h5
    background: #5260ff;
    border-radius: 30px;
    color: white;
+}
+.wrapper
+{
+     margin: 5px auto;
+     padding-left: 10px;
+     display: flex;
+     justify-content: center;
+}
+ion-label
+{
+     font-size: 0.9em;
+     font-weight: bolder;
+}
+.dateText
+{
+     font-size: 0.9em;
+     margin: 3px 0 8px 3px;
+}
+.wrapper-cont
+{
+     margin-left: 10px;
+}
+.flex
+{
+     display: grid;
+     margin: 15px;
 }
